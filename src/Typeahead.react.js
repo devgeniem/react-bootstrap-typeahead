@@ -1,9 +1,9 @@
 'use strict';
 
 import cx from 'classnames';
-import {find, isEqual, noop} from 'lodash';
+import { find, isEqual, noop } from 'lodash';
 import onClickOutside from 'react-onclickoutside';
-import React, {PropTypes} from 'react';
+import React, { PropTypes } from 'react';
 
 import ClearButton from './ClearButton.react';
 import Loader from './Loader.react';
@@ -20,7 +20,7 @@ import getOptionLabel from './utils/getOptionLabel';
 import getTruncatedOptions from './utils/getTruncatedOptions';
 import warn from './utils/warn';
 
-import {DOWN, ESC, RETURN, TAB, UP} from './utils/keyCode';
+import { DOWN, ESC, RETURN, TAB, UP } from './utils/keyCode';
 
 /**
  * Typeahead
@@ -192,7 +192,7 @@ const Typeahead = React.createClass({
   },
 
   getInitialState() {
-    const {defaultSelected, maxResults} = this.props;
+    const { defaultSelected, maxResults } = this.props;
 
     let selected = this.props.selected.slice();
     if (defaultSelected && defaultSelected.length) {
@@ -236,22 +236,22 @@ const Typeahead = React.createClass({
   },
 
   componentWillReceiveProps(nextProps) {
-    const {multiple, selected} = nextProps;
+    const { multiple, selected } = nextProps;
 
     if (!isEqual(selected, this.props.selected)) {
       // If new selections are passed in via props, treat the component as a
       // controlled input.
-      this.setState({selected});
+      this.setState({ selected });
     }
 
     if (multiple !== this.props.multiple) {
-      this.setState({text: ''});
+      this.setState({ text: '' });
     }
   },
 
   render() {
-    const {allowNew, className, dropup, labelKey, paginate} = this.props;
-    const {shownResults, text} = this.state;
+    const { allowNew, className, dropup, labelKey, paginate } = this.props;
+    const { shownResults, text } = this.state;
 
     // First filter the results by the input string.
     let results = this._getFilteredResults();
@@ -274,7 +274,7 @@ const Typeahead = React.createClass({
         className={cx('bootstrap-typeahead', 'clearfix', 'open', {
           'dropup': dropup,
         }, className)}
-        style={{position: 'relative'}}>
+        style={{ position: 'relative' }}>
         {this._renderInput(results)}
         {this._renderAux()}
         {this._renderMenu(results, shouldPaginate)}
@@ -292,7 +292,7 @@ const Typeahead = React.createClass({
       multiple,
       options,
     } = this.props;
-    const {selected, text} = this.state;
+    const { selected, text } = this.state;
 
     if (text.length < minLength) {
       return [];
@@ -304,7 +304,7 @@ const Typeahead = React.createClass({
         text,
         labelKey,
         multiple && !!find(selected, o => isEqual(o, option)),
-        {caseSensitive, ignoreDiacritics, fields: filterBy}
+        { caseSensitive, ignoreDiacritics, fields: filterBy }
       ) :
       option => filterBy(option, text);
 
@@ -321,7 +321,7 @@ const Typeahead = React.createClass({
    * and selection(s).
    */
   clear() {
-    const {activeIndex, activeItem, showMenu} = this.getInitialState();
+    const { activeIndex, activeItem, showMenu } = this.getInitialState();
     const selected = [];
     const text = '';
 
@@ -349,12 +349,13 @@ const Typeahead = React.createClass({
       minLength,
       multiple,
       name,
+      type,
       placeholder,
       renderToken,
     } = this.props;
-    const {activeIndex, activeItem, initialItem, selected, text} = this.state;
+    const { activeIndex, activeItem, initialItem, selected, text } = this.state;
     const Input = multiple ? TokenizerInput : TypeaheadInput;
-    const inputProps = {bsSize, disabled, name, placeholder, renderToken};
+    const inputProps = { bsSize, disabled, name, placeholder, renderToken, type };
 
     return (
       <Input
@@ -381,7 +382,7 @@ const Typeahead = React.createClass({
         options={results}
         ref="input"
         selected={selected.slice()}
-        value={getInputText({activeItem, labelKey, multiple, selected, text})}
+        value={getInputText({ activeItem, labelKey, multiple, selected, text })}
       />
     );
   },
@@ -401,7 +402,7 @@ const Typeahead = React.createClass({
       renderMenuItemChildren,
     } = this.props;
 
-    const {showMenu, text} = this.state;
+    const { showMenu, text } = this.state;
 
     const menuProps = {
       align,
@@ -435,7 +436,7 @@ const Typeahead = React.createClass({
   },
 
   _renderAux() {
-    const {bsSize, clearButton, disabled, isLoading} = this.props;
+    const { bsSize, clearButton, disabled, isLoading } = this.props;
 
     if (isLoading) {
       return <Loader bsSize={bsSize} />;
@@ -453,7 +454,7 @@ const Typeahead = React.createClass({
   },
 
   _handleActiveItemChange(activeItem) {
-    this.setState({activeItem});
+    this.setState({ activeItem });
   },
 
   _handleBlur(e) {
@@ -464,18 +465,18 @@ const Typeahead = React.createClass({
 
   _handleFocus(e) {
     this.props.onFocus(e);
-    this.setState({showMenu: true});
+    this.setState({ showMenu: true });
   },
 
   _handleInitialItemChange(initialItem) {
     const currentItem = this.state.initialItem;
 
     if (!currentItem) {
-      this.setState({initialItem});
+      this.setState({ initialItem });
       return;
     }
 
-    const {labelKey} = this.props;
+    const { labelKey } = this.props;
 
     // Don't update the initial item if it hasn't changed. For custom items,
     // compare the `labelKey` values since a unique id is generated each time,
@@ -483,16 +484,16 @@ const Typeahead = React.createClass({
     if (
       isEqual(initialItem, currentItem) ||
       (initialItem.customOption &&
-       initialItem[labelKey] === currentItem[labelKey])
+        initialItem[labelKey] === currentItem[labelKey])
     ) {
       return;
     }
 
-    this.setState({initialItem});
+    this.setState({ initialItem });
   },
 
   _handleTextChange(text) {
-    const {activeIndex, activeItem} = this.getInitialState();
+    const { activeIndex, activeItem } = this.getInitialState();
     this.setState({
       activeIndex,
       activeItem,
@@ -504,7 +505,7 @@ const Typeahead = React.createClass({
   },
 
   _handleKeydown(options, e) {
-    const {activeItem, showMenu} = this.state;
+    const { activeItem, showMenu } = this.state;
 
     switch (e.keyCode) {
       case UP:
@@ -514,7 +515,7 @@ const Typeahead = React.createClass({
           return;
         }
 
-        let {activeIndex} = this.state;
+        let { activeIndex } = this.state;
 
         // Prevents input cursor from going to the beginning when pressing up.
         e.preventDefault();
@@ -529,7 +530,7 @@ const Typeahead = React.createClass({
           activeIndex = options.length - 1;
         }
 
-        const newState = {activeIndex};
+        const newState = { activeIndex };
         if (activeIndex === -1) {
           // Reset the active item if there is no active index.
           newState.activeItem = null;
@@ -560,7 +561,7 @@ const Typeahead = React.createClass({
   },
 
   _handleAddOption(selectedOption) {
-    const {multiple, labelKey, onChange, onInputChange} = this.props;
+    const { multiple, labelKey, onChange, onInputChange } = this.props;
 
     let selected;
     let text;
@@ -589,10 +590,10 @@ const Typeahead = React.createClass({
   },
 
   _handlePagination(e) {
-    const {maxResults, onPaginate} = this.props;
+    const { maxResults, onPaginate } = this.props;
 
     onPaginate(e);
-    this.setState({shownResults: this.state.shownResults + maxResults});
+    this.setState({ shownResults: this.state.shownResults + maxResults });
   },
 
   _handleRemoveOption(removedOption) {
@@ -602,7 +603,7 @@ const Typeahead = React.createClass({
     // Make sure the input stays focused after the item is removed.
     this.focus();
 
-    this.setState({selected});
+    this.setState({ selected });
     this._hideDropdown();
 
     this.props.onChange(selected);

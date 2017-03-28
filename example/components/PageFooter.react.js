@@ -1,10 +1,8 @@
 import React from 'react';
 
-import {version} from '../../package.json';
+import { version } from '../../package.json';
 
 import Container from './Container';
-import GitHubStarsButton from './GitHubStarsButton';
-
 const AUTHOR_GITHUB_URL = 'https://github.com/ericgio';
 const BASE_GITHUB_URL = `${AUTHOR_GITHUB_URL}/react-bootstrap-typeahead`;
 
@@ -18,9 +16,9 @@ const authorLink =
 
 const currentYear = (new Date()).getFullYear();
 const footerLinks = [
-  {href: BASE_GITHUB_URL, label: 'GitHub'},
-  {href: `${BASE_GITHUB_URL}/issues`, label: 'Issues'},
-  {href: `${BASE_GITHUB_URL}/releases`, label: 'Releases'},
+  { href: BASE_GITHUB_URL, label: 'GitHub' },
+  { href: `${BASE_GITHUB_URL}/issues`, label: 'Issues' },
+  { href: `${BASE_GITHUB_URL}/releases`, label: 'Releases' },
 ];
 
 const licenseLink =
@@ -43,7 +41,7 @@ const PageFooter = () => (
   <footer className="bs-docs-footer">
     <Container>
       <ul className="bs-docs-footer-links">
-        {footerLinks.map(({href, label}, idx) => (
+        {footerLinks.map(({ href, label }, idx) => (
           <li key={idx}>
             <a href={href} target="_blank">
               {label}
@@ -56,7 +54,6 @@ const PageFooter = () => (
         <li>Licensed under {licenseLink}</li>
         <li>Current version: {versionLink}</li>
       </ul>
-      <GitHubStarsButton />
     </Container>
   </footer>
 );
