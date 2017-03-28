@@ -12,7 +12,7 @@ const TextInput = React.createClass({
   },
 
   render() {
-    const {bsSize, className, hasAux, ...otherProps} = this.props;
+    const {type, bsSize, className, hasAux, ...otherProps} = this.props;
 
     return (
       <input
@@ -23,7 +23,7 @@ const TextInput = React.createClass({
           'input-sm': bsSize === 'small' || bsSize === 'sm',
         }, className)}
         ref={input => this._input = input}
-        type="text"
+        type={type ? type : 'number'}
       />
     );
   },

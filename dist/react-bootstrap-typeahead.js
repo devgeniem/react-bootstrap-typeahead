@@ -2624,6 +2624,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  getDefaultProps: function getDefaultProps() {
 	    return {
+	      type: 'text',
 	      allowNew: false,
 	      autoFocus: false,
 	      bodyContainer: false,
@@ -6844,10 +6845,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	    var _this = this;
 
 	    var _props = this.props,
+	        type = _props.type,
 	        bsSize = _props.bsSize,
 	        className = _props.className,
 	        hasAux = _props.hasAux,
-	        otherProps = _objectWithoutProperties(_props, ['bsSize', 'className', 'hasAux']);
+	        otherProps = _objectWithoutProperties(_props, ['type', 'bsSize', 'className', 'hasAux']);
 
 	    return _react2.default.createElement('input', _extends({}, otherProps, {
 	      className: (0, _classnames2.default)('form-control', {
@@ -6858,7 +6860,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      ref: function ref(input) {
 	        return _this._input = input;
 	      },
-	      type: 'text'
+	      type: type ? type : 'number'
 	    }));
 	  },
 	  getInstance: function getInstance() {
@@ -7171,6 +7173,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        hasAux = _props2.hasAux,
 	        hintText = _props2.hintText,
 	        name = _props2.name,
+	        type = _props2.type,
 	        onFocus = _props2.onFocus,
 	        placeholder = _props2.placeholder,
 	        selected = _props2.selected,
@@ -7182,6 +7185,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      disabled: disabled,
 	      hasAux: hasAux,
 	      name: name,
+	      type: type,
 	      onFocus: onFocus,
 	      placeholder: placeholder,
 	      value: value

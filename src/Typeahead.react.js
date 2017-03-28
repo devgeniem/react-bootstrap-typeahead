@@ -150,6 +150,7 @@ const Typeahead = React.createClass({
 
   getDefaultProps() {
     return {
+      type: 'text',
       allowNew: false,
       autoFocus: false,
       bodyContainer: false,
