@@ -84,6 +84,7 @@ const TypeaheadInput = React.createClass({
       hasAux,
       name,
       type,
+      onKeyDown,
       onFocus,
       placeholder,
       value,

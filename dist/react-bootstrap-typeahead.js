@@ -6845,17 +6845,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	    var _this = this;
 
 	    var _props = this.props,
+	        onKeyDown = _props.onKeyDown,
 	        type = _props.type,
 	        bsSize = _props.bsSize,
 	        className = _props.className,
 	        hasAux = _props.hasAux,
-	        otherProps = _objectWithoutProperties(_props, ['type', 'bsSize', 'className', 'hasAux']);
+	        otherProps = _objectWithoutProperties(_props, ['onKeyDown', 'type', 'bsSize', 'className', 'hasAux']);
 
-	    return _react2.default.createElement('input', _extends({
-	      onKeydown: function onKeydown(e) {
-	        console.log(e.target.value);
-	      }
-	    }, otherProps, {
+	    return _react2.default.createElement('input', _extends({}, otherProps, {
 	      className: (0, _classnames2.default)('form-control', {
 	        'has-aux': hasAux,
 	        'input-lg': bsSize === 'large' || bsSize === 'lg',
@@ -7190,6 +7187,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      hasAux: hasAux,
 	      name: name,
 	      type: type,
+	      onKeyDown: onKeyDown,
 	      onFocus: onFocus,
 	      placeholder: placeholder,
 	      value: value

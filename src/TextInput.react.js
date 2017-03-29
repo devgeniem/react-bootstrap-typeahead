@@ -12,11 +12,10 @@ const TextInput = React.createClass({
   },
 
   render() {
-    const {type, bsSize, className, hasAux, ...otherProps} = this.props;
+    const {onKeyDown, type, bsSize, className, hasAux, ...otherProps} = this.props;
 
     return (
       <input
-        onKeydown={(e) => {console.log(e.target.value)}}
         {...otherProps}
         className={cx('form-control', {
           'has-aux': hasAux,
