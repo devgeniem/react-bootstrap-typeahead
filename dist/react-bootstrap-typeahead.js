@@ -7286,9 +7286,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	        selected = _props4.selected,
 	        value = _props4.value;
 
-
-	    console.log('kd->', e, this.props);
-
 	    switch (e.keyCode) {
 	      case _keyCode.RIGHT:
 	      case _keyCode.TAB:

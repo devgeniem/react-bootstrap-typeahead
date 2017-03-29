@@ -13,7 +13,6 @@ const TextInput = React.createClass({
 
   render() {
     const { type, bsSize, className, hasAux, ...otherProps} = this.props;
-
     return (
       <input
         {...otherProps}

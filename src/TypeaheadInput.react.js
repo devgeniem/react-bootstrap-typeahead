@@ -178,10 +178,6 @@ const TypeaheadInput = React.createClass({
       selected,
       value,
     } = this.props;
-
-    console.log('kd->',e, this.props);
-
-
     switch (e.keyCode) {
       case RIGHT:
       case TAB:
