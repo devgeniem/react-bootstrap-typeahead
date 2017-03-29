@@ -72,6 +72,7 @@ const TypeaheadInput = React.createClass({
       hintText,
       name,
       type,
+      onKeyDown,
       onFocus,
       placeholder,
       selected,

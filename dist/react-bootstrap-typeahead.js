@@ -7175,6 +7175,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        hintText = _props2.hintText,
 	        name = _props2.name,
 	        type = _props2.type,
+	        onKeyDown = _props2.onKeyDown,
 	        onFocus = _props2.onFocus,
 	        placeholder = _props2.placeholder,
 	        selected = _props2.selected,
