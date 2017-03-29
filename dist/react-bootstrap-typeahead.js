@@ -7225,6 +7225,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	        bsSize: bsSize,
 	        className: (0, _classnames2.default)('bootstrap-typeahead-input-hint'),
 	        hasAux: hasAux,
+	        onKeyDown: function onKeyDown(e) {
+	          console.log(e);
+	        },
 	        style: {
 	          borderColor: 'transparent',
 	          bottom: 0,

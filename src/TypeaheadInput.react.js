@@ -120,6 +120,7 @@ const TypeaheadInput = React.createClass({
           bsSize={bsSize}
           className={cx('bootstrap-typeahead-input-hint')}
           hasAux={hasAux}
+          onKeyDown={e => { console.log(e)}}
           style={{
             borderColor: 'transparent',
             bottom: 0,
@@ -173,7 +174,7 @@ const TypeaheadInput = React.createClass({
       activeItem,
       hintText,
       initialItem,
-      onAdd,
+      onAdd,  
       selected,
       value,
     } = this.props;
