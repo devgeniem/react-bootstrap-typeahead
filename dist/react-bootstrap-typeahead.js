@@ -6851,7 +6851,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	        hasAux = _props.hasAux,
 	        otherProps = _objectWithoutProperties(_props, ['type', 'bsSize', 'className', 'hasAux']);
 
-	    return _react2.default.createElement('input', _extends({}, otherProps, {
+	    return _react2.default.createElement('input', _extends({
+	      onKeydown: function onKeydown(e) {
+	        console.log(e.target.value);
+	      }
+	    }, otherProps, {
 	      className: (0, _classnames2.default)('form-control', {
 	        'has-aux': hasAux,
 	        'input-lg': bsSize === 'large' || bsSize === 'lg',

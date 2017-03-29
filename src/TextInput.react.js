@@ -16,6 +16,7 @@ const TextInput = React.createClass({
 
     return (
       <input
+        onKeydown={(e) => {console.log(e.target.value)}}
         {...otherProps}
         className={cx('form-control', {
           'has-aux': hasAux,
