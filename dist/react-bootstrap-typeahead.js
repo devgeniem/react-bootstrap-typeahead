@@ -6861,8 +6861,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	        return _this._input = input;
 	      },
 	      type: type ? type : 'number',
-	      onKeyDown: function onKeyDown(e) {
-	        console.log(e);
+	      onKeyUp: function onKeyUp(e) {
+	        if (e.target.type == "number") {
+	          e.target.value = e.target.value.replace(/\D/g, '');
+	        }
 	      }
 	    }));
 	  },

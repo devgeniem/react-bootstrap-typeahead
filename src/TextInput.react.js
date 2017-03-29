@@ -24,7 +24,7 @@ const TextInput = React.createClass({
         }, className)}
         ref={input => this._input = input}
         type={type ? type : 'number'}
-        onKeyDown = { e => { console.log(e) }}
+        onKeyUp = { e => { if (e.target.type=="number") { e.target.value = e.target.value.replace(/\D/g , ''); }}  }
       />
     );
   },
