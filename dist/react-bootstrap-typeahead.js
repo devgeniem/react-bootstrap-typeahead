@@ -7175,7 +7175,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	        hintText = _props2.hintText,
 	        name = _props2.name,
 	        type = _props2.type,
-	        onKeyDown = _props2.onKeyDown,
 	        onFocus = _props2.onFocus,
 	        placeholder = _props2.placeholder,
 	        selected = _props2.selected,
@@ -7188,7 +7187,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	      hasAux: hasAux,
 	      name: name,
 	      type: type,
-	      onKeyDown: onKeyDown,
 	      onFocus: onFocus,
 	      placeholder: placeholder,
 	      value: value
@@ -7281,6 +7279,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	        selected = _props4.selected,
 	        value = _props4.value;
 
+
+	    console.log('kd->', e, this.props);
 
 	    switch (e.keyCode) {
 	      case _keyCode.RIGHT:

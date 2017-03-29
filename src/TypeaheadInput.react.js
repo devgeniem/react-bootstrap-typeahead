@@ -72,7 +72,6 @@ const TypeaheadInput = React.createClass({
       hintText,
       name,
       type,
-      onKeyDown,
       onFocus,
       placeholder,
       selected,
@@ -85,7 +84,6 @@ const TypeaheadInput = React.createClass({
       hasAux,
       name,
       type,
-      onKeyDown,
       onFocus,
       placeholder,
       value,
@@ -170,6 +168,7 @@ const TypeaheadInput = React.createClass({
   },
 
   _handleKeydown(e) {
+
     const {
       activeItem,
       hintText,
@@ -178,6 +177,9 @@ const TypeaheadInput = React.createClass({
       selected,
       value,
     } = this.props;
+
+    console.log('kd->',e, this.props);
+
 
     switch (e.keyCode) {
       case RIGHT:
