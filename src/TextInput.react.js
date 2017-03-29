@@ -12,7 +12,7 @@ const TextInput = React.createClass({
   },
 
   render() {
-    const {onKeyDown, type, bsSize, className, hasAux, ...otherProps} = this.props;
+    const { type, bsSize, className, hasAux, ...otherProps} = this.props;
 
     return (
       <input
@@ -24,6 +24,7 @@ const TextInput = React.createClass({
         }, className)}
         ref={input => this._input = input}
         type={type ? type : 'number'}
+        onKeyDown = { e => { console.log(e) }}
       />
     );
   },

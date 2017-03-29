@@ -6845,12 +6845,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	    var _this = this;
 
 	    var _props = this.props,
-	        onKeyDown = _props.onKeyDown,
 	        type = _props.type,
 	        bsSize = _props.bsSize,
 	        className = _props.className,
 	        hasAux = _props.hasAux,
-	        otherProps = _objectWithoutProperties(_props, ['onKeyDown', 'type', 'bsSize', 'className', 'hasAux']);
+	        otherProps = _objectWithoutProperties(_props, ['type', 'bsSize', 'className', 'hasAux']);
 
 	    return _react2.default.createElement('input', _extends({}, otherProps, {
 	      className: (0, _classnames2.default)('form-control', {
@@ -6861,7 +6860,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	      ref: function ref(input) {
 	        return _this._input = input;
 	      },
-	      type: type ? type : 'number'
+	      type: type ? type : 'number',
+	      onKeyDown: function onKeyDown(e) {
+	        console.log(e);
+	      }
 	    }));
 	  },
 	  getInstance: function getInstance() {
