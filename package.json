@@ -58,10 +58,10 @@
     "eslint": "^3.1.1",
     "eslint-config-ericgio": "^1.1.0",
     "eslint-plugin-react": "^6.9.0",
-    "highlight.js": "^9.9.0",
+    "highlight.js": "^11.10.0",
     "isomorphic-fetch": "^2.2.1",
     "json-loader": "^0.5.4",
-    "karma": "^1.1.2",
+    "karma": "^6.4.4",
     "karma-chai": "^0.1.0",
     "karma-chrome-launcher": "^2.0.0",
     "karma-mocha": "^1.1.1",
@@ -76,7 +76,7 @@
     "react-dom": "^15.2.1",
     "react-waypoint": "^5.0.3",
     "style-loader": "^0.13.1",
-    "webpack": "^1.13.1"
+    "webpack": "^5.94.0"
   },
   "repository": {
     "type": "git",
